@@ -22,8 +22,7 @@ jobs:
           AWS_REGION: "us-east-1"
         run: |
           terraform init
-
-      - name: run terraform plan
-        run: terraform plan
+          echo -e "\e[31m Running Terraform Plan\e[0m"
+          terraform plan
           
     
