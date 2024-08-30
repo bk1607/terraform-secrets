@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Log level: $LEVEL"
+          echo "Log level: $SERVICE"
           echo "Tags: $TAGS"
           echo "Environment: $ENVIRONMENT"
         env:
