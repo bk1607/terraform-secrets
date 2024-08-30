@@ -3,15 +3,14 @@ name:
 on:
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'
+      ServiceName:
+        description: 'Service Name'
         required: true
-        default: 'warning'
         type: choice
         options:
-        - info
-        - warning
-        - debug
+        - careecoapi
+        - ceclaimsapi
+        - ceschedulesapi
       tags:
         description: 'Test scenario tags'
         required: false
