@@ -11,10 +11,14 @@ on:
         - careecoapi
         - ceclaimsapi
         - ceschedulesapi
-      tags:
-        description: 'Test scenario tags'
+      Variables:
+        description: 'variable file name'
         required: false
-        type: boolean
+        type: choice
+        options:
+        - dev.tfvars
+        - qa.tfvars
+        - prod.tfvars
       environment:
         description: 'Environment to run tests against'
         type: environment
@@ -26,9 +30,9 @@ jobs:
     steps:
       - run: |
           echo "directory name: ceelasticbeanstalk/environments/dev/$SERVICENAME/"
-          echo "Tags: $TAGS"
+          echo "Variables file name: $VARIABLES"
           echo "Environment: $ENVIRONMENT"
         env:
           SERVICENAME: ${{ inputs.ServiceName }}
-          TAGS: ${{ inputs.tags }}
+          VARIABLES: ${{ inputs.Variables }}
           ENVIRONMENT: ${{ inputs.environment }}
