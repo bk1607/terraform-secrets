@@ -34,8 +34,7 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-    - name: pwd
-      run: ls -la
+    
     - name: change directory
       run: |
           cd "ceelasticbeanstalk/${{ env.ENVIRONMENT }}/${{ env.SERVICENAME }}"
@@ -45,3 +44,5 @@ jobs:
           SERVICENAME: ${{ inputs.ServiceName }}
           VARIABLES: ${{ inputs.Variables }}
           ENVIRONMENT: ${{ inputs.Environment }}
+    - name: pwd
+      run: ls -la
