@@ -19,10 +19,13 @@ jobs:
         with:
           terraform_version: 1.8.5
 
-      - name: initiailize terraform
-        run: |
-          terraform init
-          echo -e "\e[31m Running Terraform Plan\e[0m"
-          terraform plan
+      - name: initialize terraform
+        run: terraform init
+
+      - name: execute terraform plan
+        run: terraform plan
+
+      - name: apply terraform code
+        run: terraform apply -auto-approve
           
     
